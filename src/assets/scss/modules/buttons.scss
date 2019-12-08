@@ -59,3 +59,44 @@
         color: $submain-color;
     }
 }
+
+.burger-btn {
+    display: block;
+    @include size(50px);
+    background-color: #fff;
+    border-radius: 50%;
+    position: relative;
+    span,
+    span:before,
+    span:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -1px;
+        margin-left: -10px;
+        width: 20px;
+        height: 2px;
+        background-color: #222222;
+    }
+    span:before,
+    span:after {
+        content: '';
+        display: block;
+        transition: 0.2s;
+    }
+    span:before {
+        transform: translateY(-5px);
+    }
+    span:after {
+        transform: translateY(5px);
+    }
+    &.burger-btn_active span {
+        height: 0;
+    }
+    &.burger-btn_active span::before {
+        transform: rotate(45deg);
+    }
+    &.burger-btn_active span::after {
+        transform: rotate(-45deg);
+    }
+}

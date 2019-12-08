@@ -108,4 +108,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
         }
     }
 
-  })
+    const burgerMenu = document.querySelector('.burger-btn');
+    burgerMenu.addEventListener('click', function(e) {
+        e.preventDefault();
+        burgerMenu.classList.toggle('burger-btn_active');
+    })
+
+})

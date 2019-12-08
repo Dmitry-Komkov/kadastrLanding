@@ -202,6 +202,9 @@ a.tel {color: white; &:hover {color: #ff1f48}}
 }
 .footer-form__input {
   width: 70%;
+  @media screen and (max-width: $smDesktopWidth) {
+    width: 100%;
+  }
   .input-tel {
     border: 1px solid $border-base;
     border-radius: 10px;

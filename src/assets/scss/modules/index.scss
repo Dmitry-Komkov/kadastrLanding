@@ -50,6 +50,9 @@
                     position: relative;
                     z-index: 1;
                     @include size(140px);
+                    @media screen and (max-width: $smDesktopWidth) { 
+                        @include size(120px);
+                    }
                     p {
                         padding-top: 10px;
                         text-align: center;
@@ -72,6 +75,9 @@
             }
         }
     }
+    // @media screen and (max-width: $smDesktopWidth) { 
+    //     padding-bottom: 100px;
+    // }
 }
 
 // Оставьте заявку
@@ -79,7 +85,7 @@
 #contact-us {
     position: relative;
     z-index: 10;
-    margin-top: -10%;
+    margin-top: -14%;
     .contact-us-container {
         display: grid;
         grid-template-rows: 1fr;
@@ -90,12 +96,21 @@
         padding: 50px;
         border-radius: 10px;
         box-shadow: 0 7px 7px 0 rgba(48, 49, 51, .3);
+        @media screen and (max-width: $smDesktopWidth) { 
+            padding: 25px 50px;
+        }
         .contact-us-container__text {
             p {
                 font-size: rem(24);
                 font-weight: 600;
+                @media screen and (max-width: $smDesktopWidth) { 
+                    font-size: rem(20);
+                }
             }
         }
+    }
+    @media screen and (max-width: $smDesktopWidth) { 
+        margin-top: -10%;
     }
 }
 
@@ -126,6 +141,7 @@
         }
     }
     @media screen and (max-width:$desktopWidth) {
+        margin: -10% 0 -10% 0;
         .container {
             .main-info__container {
                 .main-info__container__title {
@@ -152,15 +168,44 @@
             display: grid;
             grid-template-columns: 1fr 3fr;
             grid-template-rows: 1fr;
+            @media screen and (max-width: $smDesktopWidth) { 
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 4fr;
+            }
             .services__container__tabs {
+                @media screen and (max-width: $smDesktopWidth) { 
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-rows: 1fr;
+                }
                 .tabs-item {
                     cursor: pointer;
                     position: relative;
-                    padding: 35px 15px 35px 11%;
+                    padding: 35px 5px 35px 13%;
                     color: rgb(253, 197, 197);
                     background: $submain-color;
                     clip-path: polygon(15% 0, 100% 0, 100% 110%, 0 110%);
                     font-size: rem(18);
+                    @media screen and (max-width: $smDesktopWidth) {
+                        padding: 20% 5px 10px 15px;
+                        clip-path: polygon(0 30%, 110% 0, 110% 100%, 0 100%);
+                        &:before {
+                            left: 100%;
+                            top: 0;
+                            border-bottom: 70px solid rgba(0,0,0,.15);
+                            border-right: 15px solid transparent;
+                            border-left: none;
+                            border-top: none;
+                            width: 0;
+                            height: 100%;
+                        }
+                        &.active:before {
+                            border-bottom: 70px solid rgba(0,0,0,.25);
+                            border-right: 15px solid transparent;
+                            border-left: none;
+                            border-top: none;
+                        }
+                    }
                     &.active, &:hover {
                         background: white;
                         color: $primary-color;
