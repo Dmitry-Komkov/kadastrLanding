@@ -4,7 +4,7 @@ window.onscroll = function() {
 };
 
 function sctickHeader() {
-    let header = document.getElementById("header");
+    let header = document.getElementById("header-bot");
     let sticky = header.offsetTop;
     if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
