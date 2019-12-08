@@ -1,0 +1,17 @@
+.modal
+    .modal__form-wrapper
+        .modal__form__container
+            form#modal-form(action="")
+                h2.title-line Мы перезвоним Вам
+                .input-wrapper
+                    .input-row
+                        input.input-text(type="text", name="name", placeholder="Ваше имя*")
+                    .input-row
+                        input.input-text(type="text", name="name", placeholder="Контактный телефон*")
+                    .input-row
+                        textarea.input-text(name="comment", cols="auto", rows="4", placeholder="Ваш вопрос")
+                .submit-wrapper
+                    .submit-row
+                        input.btn.btn-modal(type="submit", value="ОТПРАВИТЬ")
+            .close-modal
+                button.btn-close(title="Закрыть ESC", type="button")

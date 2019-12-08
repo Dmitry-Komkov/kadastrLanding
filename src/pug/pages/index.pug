@@ -1,0 +1,192 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Главная страница';
+  - var description = 'Кадастровые работы';
+  - var pageClass = 'main-page';
+
+block content
+
+  section#banner(style="background-image: url('./assets/img/content/banner-main2.jpg')")
+    .container.banner__container
+      .banner__offer.text-light
+        p.banner__offer__first-line.text-uppercase.title-line Заголовок предложения
+        p.banner__offer__last-line Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus deleniti eum distinctio dignissimos id accusamus architecto error
+        button.btn.banner__offer__button.btn-primary.open-popup Оставить заявку
+      .banner__advantages.text-light
+        ul.banner__advantages__items
+          li.item
+            +icon('stopwatch', '90px', '90px', 'white')
+            p.text-uppercase Быстрые сроки
+          li.item
+            +icon('price', '90px', '90px', 'white')
+            p.text-uppercase РАБОТАЕМ «ПОД КЛЮЧ»
+          li.item
+            +icon('team', '90px', '90px', 'white')
+            p.text-uppercase КОМАНДА ПРОФЕССИОНАЛОВ
+  section#contact-us
+    .contact-us-container
+      .contact-us-container__text
+        p.text-uppercase Оставьте заявку на обратный звонок
+      .contact-us-container__form
+        form#contact-form-1(action="")
+          .form__input
+            input.input-tel(type="tel", name="phone", placeholder="Ваш телефон*")
+          .submit__input
+            input.btn.btn-primary.form-1-btn(type="submit", value="Оставить заявку")
+
+  section#main-info(style="background-image: url('./assets/img/content/main-info-bg.jpg')")
+    .container
+      .main-info__container
+        .main-info__container__title.shadow-bot
+          h1.text-uppercase.title-line кадастровые и геодезические работы в москве и московской области
+          p В современном обществе услуги грамотного кадастрового инженера — это необходимость! Квалифицированная помощь кадастрового инженера потребуется вам в ряде случаев для подготовки должным образом в соответствии с законодательством документации, необходимой для направления в РОСРЕЕСТР
+        
+
+  section#services
+    .container
+      h2.text-uppercase.title-line наши услуги
+      .services__container
+        .services__container__tabs
+          .tabs-item.active.tab--1(data-value="1", style="z-index: 10") Межевание
+          .tabs-item.tab--2(data-value="2", style="z-index: 9") Топографическая съемка
+          .tabs-item.tab--3(data-value="3", style="z-index: 8") Технические планы
+          .tabs-item.tab--4(data-value="4", style="z-index: 7") Вынос в натуру
+        .services__container__content
+          .content-panel.content--1.active
+            .content-panel__text
+              .content-panel__text__title
+                h3 Межевание
+                p Для проведения любых операций с участком (продажа, аренда и прочее) необходимы точные сведения о площади и зафиксированных границах земли. Межевание земли включает мероприятия, которые увязывают информацию об участке с картой местности. Результаты процедуры оформляются юридически и отображаются в межевом плане.
+              .content-panel__text__buttons
+                button.btn.btn-secondary.open-popup Заказать услугу
+                p от 10000 ₽
+            .content-panel__img(style="background-image: url('./assets/img/content/tabs-img-1.jpg')")
+
+          .content-panel.content--2
+            .content-panel__text
+              .content-panel__text__title
+                h3 Топографическая съемка
+                p Топографическая съемка участка проводится при оформлении правоустанавливающих документов на землю, а также перед строительством разных сооружений, проектированием, прокладкой, реконструкцией инженерных сетей. Топосъемка требуется для определения объема земельных и ландшафтных работ. На основе сведений, полученных после съемки, разрабатывается план территории, детальные карты и прочая рабочая документация.
+              .content-panel__text__buttons
+                button.btn.btn-secondary.open-popup Заказать услугу
+                p от 500 ₽ за 1 сотку
+            .content-panel__img(style="background-image: url('./assets/img/content/tabs-img-2.jpg')")
+          .content-panel.content--3
+            .content-panel__text
+              .content-panel__text__title
+                h3 Технический план объекта недвижимости
+                p Технический план объекта недвижимости содержит информацию о планировке, размерах жилой и нежилой площади. Разработкой документа занимаются кадастровые инженеры. Технический план требуется для жилых домов, квартир, нежилых помещений, объектов и сооружений незавершенного строительства.
+              .content-panel__text__buttons
+                button.btn.btn-secondary.open-popup Заказать услугу
+                p от 5000 ₽
+            .content-panel__img(style="background-image: url('./assets/img/content/tabs-img-3.jpg')")
+          .content-panel.content--4
+            .content-panel__text
+              .content-panel__text__title
+                h3 Вынос границ участка в натуру
+                p Это процедура, которая направлена на установление границ земли на местности с восстановлением межевых знаков в соответствие с информацией, которая содержится в государственном кадастре недвижимости. Помимо упомянутого, процедура также имеет название «восстановление границ земельного участка».
+              .content-panel__text__buttons
+                button.btn.btn-secondary.open-popup Заказать услугу
+                p от 1 000 ₽
+            .content-panel__img(style="background-image: url('./assets/img/content/tabs-img-4.jpg')")
+
+  section#advantages(style="background-image: url('./assets/img/content/background-advantages.jpg')")
+    .container
+      h2.text-uppercase.title-line преимущества работы с нами
+      .advantages__items-container
+        .advantages__item.shadow-bot
+          .advantages__item__img
+            +icon('stopwatch', '90px', '90px', '#94090d')
+          .advantages__item__text
+            h4 Соблюдение сроков
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, voluptates nisi! Voluptatibus vitae esse doloremque temporibus odio provident voluptatem id!
+        .advantages__item.shadow-bot
+          .advantages__item__img
+            +icon('qualification', '90px', '90px', '#94090d')
+          .advantages__item__text
+            h4 Квалифицированные сотрудники
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, voluptates nisi! Voluptatibus vitae esse doloremque temporibus odio provident voluptatem id!
+        .advantages__item.shadow-bot
+          .advantages__item__img
+            +icon('price', '90px', '90px', '#94090d')
+          .advantages__item__text
+            h4 Низкие цены
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, voluptates nisi! Voluptatibus vitae esse doloremque temporibus odio provident voluptatem id!
+        .advantages__item.shadow-bot
+          .advantages__item__img
+            +icon('quality', '90px', '90px', '#94090d')
+          .advantages__item__text
+            h4 Качество работы
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus, voluptates nisi! Voluptatibus vitae esse doloremque temporibus odio provident voluptatem id!
+
+  section#work-stages
+    .container
+      h2.title-line.text-uppercase этапы проведения работ
+      .works-stages__container
+        .works-stages__container__buttons
+          .button.item--1.active(data-value="1")
+            p 1
+          .button.item--2(data-value="2")
+            p 2
+          .button.item--3(data-value="3")
+            p 3
+          .button.item--4(data-value="4")
+            p 4
+          .button.item--5(data-value="5")
+            p 5
+          .button.item--6(data-value="6")
+            p.last 6
+        .works-stages__container__tabs.shadow-bot
+          .tab.tab--1.active
+            .tab__left
+              p Обработка заявки
+              .tab__left__img
+                +icon('request', '90px', '90px', '#690e29')
+            .tab__right
+              p Вы оставляете заявку на нашем сайте или по телефону 8 (911) 999-22-33. Наш менеджер связывается с вами для уточнения деталей.
+          .tab.tab--2
+            .tab__left
+              p Личная встреча
+              .tab__left__img
+                +icon('meeting', '90px', '90px', '#690e29')
+            .tab__right
+              p Личная встреча. Подробное изучение деталей и возможных "подводных камней" проекта
+          .tab.tab--3
+            .tab__left
+              p Заключение договора
+              .tab__left__img
+                +icon('document', '90px', '90px', '#690e29')
+            .tab__right
+              p Заключение договора. Внесение 50% предоплаты за проект
+          .tab.tab--4
+            .tab__left
+              p Выезд на объект
+              .tab__left__img
+                +icon('map', '90px', '90px', '#690e29')
+            .tab__right
+              p Выезд на объект. Проведение необходимых работ и составление документации
+          .tab.tab--5
+            .tab__left
+              p Демонстрация документов
+              .tab__left__img
+                +icon('project', '90px', '90px', '#690e29')
+            .tab__right
+              p Демонстрация проектов документов
+          .tab.tab--6
+            .tab__left
+              p Подписание акта выполненых работ
+              .tab__left__img
+                +icon('signature', '90px', '90px', '#690e29')
+            .tab__right
+              p Подписание акта выполненых работ. Оплата оставшихся 50%
+
+  section#about(style="background-image: url('./assets/img/content/about-bg-lg.jpg')")
+    .container
+      .about__container.shadow-bot
+        h2.text-uppercase.title-line о компании
+        p.quote <i>«Ставим людей превыше всего»</i>
+        hr
+        p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, rerum ea repellat quaerat, id pariatur cupiditate ipsa magnam maxime odio ad iure assumenda natus officiis explicabo, atque repellendus similique possimus? At tempore distinctio eaque odio velit cupiditate quo nam quas, quis tempora doloribus molestiae, amet alias dolores vel, vero aliquam placeat dicta aut aliquid? Aliquam maxime, illo provident dolor placeat dolores veniam dicta vitae! Ea quas in nobis laborum ex magni ab eligendi ad! Laudantium vel laboriosam cupiditate maiores ipsam.
+
+block script

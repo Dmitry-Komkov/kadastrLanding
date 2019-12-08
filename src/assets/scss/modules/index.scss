@@ -1,0 +1,445 @@
+// Main Banner
+
+#banner {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    max-height: 500px;
+    position: relative;
+    z-index: 1;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, $dark-primary-transp 0%, $second-color-transp 50%);
+        z-index: -1;
+    }
+    .banner__container {
+        margin-top: 100px;
+        height:100%;
+        display: flex;
+        align-items: center;
+        .banner__offer {
+            flex: 0 0 40%;
+            .banner__offer__first-line {
+                font-weight: 800;
+                font-size: rem(30);
+            }
+            .banner__offer__last-line  {
+                padding: 15px 0;
+            }
+        }
+        .banner__advantages {
+            flex: 0 0 60%;
+            display: flex;
+            justify-content: stretch;
+            .banner__advantages__items {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex: 0 0 100%;
+                .item {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    position: relative;
+                    z-index: 1;
+                    @include size(140px);
+                    p {
+                        padding-top: 10px;
+                        text-align: center;
+                        line-height: 1em;
+                        font-weight: 400;
+                        font-size: rem(18);
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        z-index: -1;
+                        top: 5%;
+                        left: 5%;
+                        background: $primary-color;
+                        width: 90%;
+                        height: 90%;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Оставьте заявку
+
+#contact-us {
+    position: relative;
+    z-index: 10;
+    margin-top: -10%;
+    .contact-us-container {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 2fr;
+        align-items: center;
+        grid-gap: 10px;
+        background: $whitesmoky-color;
+        padding: 50px;
+        border-radius: 10px;
+        box-shadow: 0 7px 7px 0 rgba(48, 49, 51, .3);
+        .contact-us-container__text {
+            p {
+                font-size: rem(24);
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+// Информация
+
+#main-info {
+    clip-path: polygon(0 0, 100% 12%, 100% 88%, 0 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 12% 0 10% 0;
+    position: relative;
+    z-index: 5;
+    margin: -11% 0 -5% 0;
+    .container {
+        .main-info__container {
+            display: flex;
+            align-items: center;
+            .main-info__container__title {
+                background: $whitesmoky-color;
+                border: 6px solid $primary-color;
+                padding: 2%;
+                flex: 0 0 50%;
+                h1 {
+                    padding-bottom: 1.5em;
+                }
+            }
+        }
+    }
+    @media screen and (max-width:$desktopWidth) {
+        .container {
+            .main-info__container {
+                .main-info__container__title {
+                    flex: 0 0 70%;
+                }
+            }
+        }
+    }
+}
+
+//Услуги
+
+#services {
+    background: $whitesmoky-color;
+    padding: 100px 0 100px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 2;
+    position: relative;
+    .container {
+        h2 {
+            padding: 0 0 30px 0;
+        }
+        .services__container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: 1fr;
+            .services__container__tabs {
+                .tabs-item {
+                    cursor: pointer;
+                    position: relative;
+                    padding: 35px 15px 35px 11%;
+                    color: rgb(253, 197, 197);
+                    background: $submain-color;
+                    clip-path: polygon(15% 0, 100% 0, 100% 110%, 0 110%);
+                    font-size: rem(18);
+                    &.active, &:hover {
+                        background: white;
+                        color: $primary-color;
+                        font-weight: 500;
+                        z-index: 12;
+                    }
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        z-index: 13;
+                        left:0%;
+                        top:100%;
+                        width:100%;
+                        border-top: 8px solid rgba(0,0,0,.2);
+                        border-left: 25px solid transparent;
+                    }
+                    &.active:before {
+                        border-top: 12px solid rgba(0,0,0,.4);
+                        border-left: 40px solid transparent;
+                        transition: .2s;
+                    }
+                    &:last-child:before, &.active:last-child:before{
+                          border: none;
+                    }
+                }
+            }
+            .services__container__content {
+                background: white;
+                border-radius: 0 10px 10px 0;
+                height: 100%;
+                box-shadow: 6px 6px 20px 5px rgba(0, 0 , 0, 0.3);
+                .content-panel {
+                    display: none;
+                }
+                .content-panel.active {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    .content-panel__text {
+                        flex: 0 0 65%;
+                        padding: 20px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 100%;
+                        h3 {
+                            padding-bottom: 5px;
+                        }
+                        .content-panel__text__buttons {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-top: 15px;
+                            p {
+                                font-weight: 800;
+                                font-size: rem(30);
+                            }
+                        }
+                    }
+                    .content-panel__img {
+                        flex: 0 0 35%;
+                        height: 100%;
+                        position: relative;
+                        background-position: center left;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Преимущества
+
+#advantages {
+    clip-path: polygon(0 0, 100% 12%, 100% 100%, 0 100%);
+    margin-top: -5%;
+    position: relative;
+    z-index: 3;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0 100px 0;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba($orange-color, .8) 0%, rgba($raspberry-color, .8) 50%);
+        z-index: -1;
+    }
+    .container {
+        h2 {
+            color: white;
+        }
+        .advantages__items-container {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            justify-content: center;
+            grid-gap: 50px;
+            margin-top: 3%;
+            position: relative;
+            z-index: 10;
+            &::before {
+                content: '';
+                position: absolute;
+                @include size(50%);
+                top: 24%;
+                left: 24%;
+                border: 6px dashed white;
+                border-radius: 50%;
+                z-index: -1;
+            }
+            .advantages__item {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                border-radius: 10px;
+                z-index: 10;
+                background: white;
+                .advantages__item__img {
+                    flex: 0 0 30%;
+                    text-align: center;
+                }
+                .advantages__item__text {
+                    flex: 0 0 70%;
+                }
+            }
+        }
+    }
+}
+
+// Этапы работы
+
+#work-stages {
+    clip-path: polygon(0 12%, 100% 0, 100% 100%, 0 100%);
+    background: $whitesmoky-color;
+    padding: 100px 0 0 0;
+    margin-top: -6%;
+    position: relative;
+    z-index: 4;
+    .container {
+        .works-stages__container {
+            padding: 5% 0;
+            .works-stages__container__buttons {
+                @include grid(1, 6);
+                .button {
+                    position: relative;
+                    z-index: 1;
+                    p {
+                        margin: 0 auto;
+                        font-weight: 500;
+                        font-size: rem(20);
+                        border: 2px solid $neutral-regular;
+                        @include size(60px);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        background: white;
+                        color:$neutral-regular;
+                        cursor: pointer;
+                        &:not(.last):after {
+                            content: '';
+                            position: absolute;
+                            @include size(100%, 3px);
+                            background: $neutral-regular;
+                            top: 50%;
+                            left: 36%;
+                            z-index: -1;
+                        }
+                    }
+                }
+                .button.active {
+                    p{
+                        background: $primary-color;
+                        color: white;
+                        border-color: $primary-color;
+                        &:after {
+                            background: $primary-color;
+                        }
+                    }
+                }            
+            }
+            .works-stages__container__tabs {
+                background: white;
+                border-radius: 10px;
+                .tab {
+                    display: none;
+                }
+                .tab.active {
+                    margin-top: 2%;
+                    padding: 5% 0;
+                    display: flex;
+                    align-items: center;
+                    .tab__left {
+                        flex: 0 0 30%;
+                        position: relative;
+                        p {
+                            font-size: rem(25);
+                            font-weight: 600;
+                            text-align: center;
+                        }
+                        .tab__left__img {
+                            padding: 20px 0 0 0;
+                            text-align: center;
+                        }
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            top: 45%;
+                            left: 75%;
+                            width: 35%;
+                            height: 20%;
+                            background: linear-gradient(90deg, rgba($orange-color, 1) 0%, rgba($raspberry-color, 1) 50%);
+                            clip-path: polygon(0 35%, 80% 35%, 80% 0%, 100% 45%, 80% 100%, 80% 55%, 0 55%);
+                        }
+                    }
+                    .tab__right {
+                        background: white;
+                        border-radius: 10px;
+                        flex: 0 0 70%;
+                        padding: 4%;
+                        p {
+                            font-size: rem(20);
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//О нас
+
+#about {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 10;
+    padding: 8% 0;
+    .container {
+        .about__container {
+            background: $whitesmoky-color;
+            width: 50%;
+            padding: 2%;
+            border: 4px solid $primary-color;
+            .quote {
+                font-size: rem(24);
+                font-weight: 500;
+                padding: 3% 0;
+            }
+            hr {
+                box-sizing: content-box;
+                height: 0;
+                overflow: visible;
+                border: 1px solid $raspberry-color;
+            }
+            p:last-child {
+                padding-top: 2%;
+                line-height: 1.6em;
+                font-weight: 400;
+            }
+        }
+    }
+
+    @media screen and (max-width: $desktopWidth) {
+        .container {
+            .about__container {
+                width: 70%;
+            }
+        }
+    }
+}

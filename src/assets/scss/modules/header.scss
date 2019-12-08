@@ -1,0 +1,88 @@
+// header style
+
+header {
+    z-index: 99999;
+    position: relative;
+    .header__top{
+        background: $second-color;
+        background: linear-gradient(90deg, $second-color 0%, $second-color 50%);
+        color: white;
+        z-index: 999999;
+        .container{
+            .header__top-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 2fr;
+                justify-content: stretch;
+                align-items: center;
+                font-size: rem(16);
+                color: $neutral-placeholder;
+                padding: 5px 0;
+                a {
+                    color: $neutral-placeholder;
+                }
+                .header__container__header__top-grid__socials{
+                    justify-self: end;
+                    .instagram-link, .vk-link {
+                        padding: 0 10px;
+                        svg {
+                            fill: $neutral-placeholder;
+                        }
+                        .icon-instagram-logo:hover {
+                            fill: #ff1f48;
+                        }
+                        .icon-vk-logo:hover {
+                            fill: #4a76a8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .header__bot {
+        background-color: transparent;
+        z-index: 999999;
+        transition: all .3s;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .navbar__logo {
+                flex: 0 0 20%;
+            }
+            .navbar__menu {
+                flex: 0 0 80%;
+                ul {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    li {
+                        padding: 0 20px;
+                        a {
+                            color: $default-color;
+                            border-bottom: 2px solid transparent;
+                            &:hover {
+                                border-bottom: 2px solid $danger-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky .header__bot {
+    background-color: rgba(255, 255, 255, 1);
+    .navbar .navbar__menu ul li a {
+        color: $mainFontColor;
+    }
+}
+  
+  .sticky + .content-wrapper {
+    padding-top: 100px;
+  }

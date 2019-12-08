@@ -1,0 +1,45 @@
+footer#contacts
+  .container
+    .contacts__container
+        .contacts__container__left.text-light
+          h2.text-uppercase.title-line наши контакты
+          .contacts__icon-box
+            .contacts__icon-box__icon
+              +icon('map2', '50px', '50px', '#ff1f48')
+            .contacts__icon-box__text
+              p.p-title Посетите нас
+              p г. Подольск, ул. Советская, д. 23, офис 203
+          .contacts__icon-box
+            .contacts__icon-box__icon
+              +icon('message', '50px', '50px', '#ff1f48')
+            .contacts__icon-box__text
+              p.p-title Напишите нам
+              a.tel(href="mailto:"+ mail)= mail
+          .contacts__icon-box
+            .contacts__icon-box__icon
+              +icon('telephone', '50px', '50px', '#ff1f48')
+            .contacts__icon-box__text
+              p.p-title Позвоните нам
+              a.tel(href="tel:"+ phone)= phone
+        .contacts__container__right
+          form#footer-form(action="")
+            .form-title
+              h3 Остались вопросы?
+              p Наш менеджер свяжется с вами, обсудит оптимальную стратегию сотрудничества и рассчитает стоимость услуг, опираясь на индивидуальные параметры кейса.
+            .footer-form__input
+              input.input-tel(type="text", name="name", placeholder="Ваше имя*")
+            .footer-form__input
+              input.input-tel(type="tel", name="tel", placeholder="Ваш номер телефона*")
+            .footer-form__input
+              textarea.input-tel(name="comment", cols="auto", rows="5", placeholder="Ваш вопрос")
+            .form-submit
+              input.btn.btn-dark(type="submit", value="Оставить заявку")
+    .container
+      .footer__bottom
+        .policy
+          span © 2019 ООО "Кадастровые услуги" / 
+          a(href="#!") Политика конфиденциальности / 
+          span ОГРН: 111222444555
+        .developement
+          span Разработка сайта:  
+          a(href="#!") D.K.

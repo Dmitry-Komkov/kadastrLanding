@@ -1,0 +1,61 @@
+.btn-primary {
+    background: $submain-color;
+    transition: .3s;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid $submain-color;
+    box-shadow: 0 5px 0 $primary-color;
+    &:hover {
+        background: $default-color;
+        color: $primary-color;
+        border: 2px solid $dark-danger-color;
+        box-shadow: 0 5px 0 $dark-danger-color;
+        transform: translateY(-5px);
+    }
+    @media screen and (max-width:$desktopWidth) {
+        padding: 10px;
+    }
+}
+
+.btn {
+    font-family: 'Roboto';
+    font-weight: 400;
+    padding: 15px 30px;
+    cursor: pointer;
+}
+.btn-secondary {
+    padding: 7px 20px;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    background: white;
+    &:hover {
+        color: white;
+        background: $primary-color;
+    }
+}
+
+.btn-dark {
+    padding: 10px 25px;
+    border: 2px solid #1c1c1c;
+    color: #1c1c1c;
+    background: white;
+    border-radius: 5px;
+    &:hover {
+        color: white;
+        background: #1c1c1c;
+    }
+}
+
+.btn-modal {
+    padding: 10px 55px;
+    background: $submain-color;
+    color: white;
+    border-radius: 5px;
+    border: 2px solid $submain-color;
+    font-weight: 500;
+    transition: all .3s;
+    &:hover {
+        background: white;
+        color: $submain-color;
+    }
+}

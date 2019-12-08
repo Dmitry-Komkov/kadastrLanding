@@ -1,0 +1,14 @@
+
+mixin icon(name,width,height,fill,mod)
+	if(mod)
+		svg(style="width:"+width +"; height:"+height +"; fill:" +fill+";" class="svg-sprite-icon icon-" + name + ' ' + mod)
+			use(xlink:href="./assets/img/svg/icons.svg#" + name)
+	else
+		svg(style="width:"+width +"; height:"+height +"; fill:" +fill+";" class="svg-sprite-icon icon-" + name)
+			use(xlink:href="./assets/img/svg/icons.svg#" + name)
+
+mixin menu(id,[...items])
+	ul(id=id)
+		each item in items
+			li.nav-item
+				a.nav-link(href="#"+item.link)= item.name

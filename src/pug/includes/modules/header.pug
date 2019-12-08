@@ -1,0 +1,26 @@
+- var phone = "8 (999) 444-66-33";
+- var mail = "mail@kadastr.ru";
+
+header#header
+  .header__top
+    .container
+      .header__top-grid
+        .header__container__header__top-grid__address
+          span.address Москва, м. Южная
+        .header__container__header__top-grid__phone
+          a.phone(href="tel:" + phone)= phone
+        .header__container__header__top-grid__mail
+          a.mail(href="mailto:" + mail)= mail
+        .header__container__header__top-grid__socials
+          a.instagram-link(href="vk.com")
+            +icon('instagram-logo', '20px', '20px')
+          a.vk-link(href="instagram.com")
+            +icon('vk-logo', '20px', '20px')
+  .header__bot
+    .container
+      nav.navbar
+        .navbar__logo
+          a(href="#!")
+            img(src="./assets/img/logo.png", alt="Site Logo")
+        .navbar__menu
+          +menu('header__menu', [{name: 'Услуги', link: 'services'}, {name: 'Преимущества', link: 'advantages'}, {name:'Как мы работаем', link:'work-stages'}, {name:'О компании', link:'about'}, {name:'Контакты', link: 'contacts'}])
