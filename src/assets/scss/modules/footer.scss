@@ -39,6 +39,10 @@ footer {
     .contacts__container__right {
         padding: 0 3%;
     }
+    @media screen and (max-width: $phoneWidth) {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+    }
 }
 
 .footer__bottom {
@@ -59,4 +63,18 @@ footer {
 .developement {
     flex: 0 0 30%;
     text-align: right;
+}
+@media screen and (max-width: 650px) {
+    .footer__bottom {
+        flex-direction: column;
+    }
+    .policy {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+    .developement {
+        flex: 0 0 100%;
+        padding-top: 20px;
+        text-align: center;
+    }
 }

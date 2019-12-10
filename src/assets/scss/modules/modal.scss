@@ -31,6 +31,21 @@
             z-index: -1;
         }
     }
+    @media screen and (max-width: $smDesktopWidth) {
+        .modal__form-wrapper {
+            max-width: 520px;
+        }
+    }
+    @media screen and (max-width: $lgPhoneWidth) {
+        .modal__form-wrapper {
+            max-width: 400px;
+        }
+    }
+    @media screen and (max-width: $phoneWidth) {
+        .modal__form-wrapper {
+            max-width: 300px !important;
+        }
+    }
 }
 
 #modal-form {
@@ -69,5 +84,11 @@
         content: url("../img/content/close.png");
         display: block;
         @include size(30px);
+    }
+    @media screen and (max-width: $phoneWidth) {
+        top: -40px;
+        right: -30px;
+        // background: white;
+        // border-radius: 50%;
     }
 }

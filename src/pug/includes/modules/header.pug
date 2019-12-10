@@ -6,7 +6,7 @@ header#header
     .container
       .header__top-grid
         .header__container__header__top-grid__address
-          span.address Москва, м. Южная
+          span.address г. Чехов. ул. Полиграфистов, д.1
         .header__container__header__top-grid__phone
           a.phone(href="tel:" + phone)= phone
         .header__container__header__top-grid__mail
@@ -18,12 +18,12 @@ header#header
             +icon('vk-logo', '20px', '20px')
   .header__bot#header-bot
     .container
-      nav.navbar
+      nav#navbar.navbar
         .navbar__logo
           a(href="#!")
             img(src="./assets/img/logo.png", alt="Site Logo")
+        .toggleMenu
+          a.burger-btn(href="javascript:void(0);")
+            span
         .navbar__menu
           +menu('header__menu', [{name: 'Услуги', link: 'services'}, {name: 'Преимущества', link: 'advantages'}, {name:'Как мы работаем', link:'work-stages'}, {name:'О компании', link:'about'}, {name:'Контакты', link: 'contacts'}])
-        .navbar__burger
-          a.burger-btn(href="#!")
-            span

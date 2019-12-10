@@ -100,7 +100,7 @@ section, .section {
     max-width: $tableWidth;
   }
   @media screen and (max-width: $tableWidth) {
-    max-width: $phoneWidth;
+    max-width: $tableWidth;
   }
 }
 
@@ -117,7 +117,10 @@ section, .section {
     max-width: $tableWidth - $tableWidth * 0.1;
   }
   @media screen and (max-width: $tableWidth) {
-    max-width: $phoneWidth - $phoneWidth * 0.1;
+    max-width: $tableWidth - $tableWidth * 0.2;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    max-width: $phoneWidth - $phoneWidth * 0.2;
   }
 }
 
@@ -181,6 +184,22 @@ a.tel {color: white; &:hover {color: #ff1f48}}
     .form-1-btn {
         width: 100%;
     }
+}
+
+@media screen and (max-width: 560px) {
+  #contact-form-1 {
+    flex-direction: column;
+  }
+  .form__input {
+    flex: 0 0 100%;
+    margin-bottom: 10px;
+    .input-tel {
+      width: 100%;
+    }
+  }
+  .submit__input {
+    flex: 0 0 100%;
+  }
 }
 
 #footer-form {

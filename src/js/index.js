@@ -82,8 +82,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const closeButton = document.querySelector('.btn-close');
     const body = document.body;
 
-    console.log(closeButton);
-
     
     const tabList = new TabList(contentContainer, tabs);
     const tabsStages = new TabsStages(buttonsContainer, tabs1);
@@ -109,9 +107,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
 
     const burgerMenu = document.querySelector('.burger-btn');
+    const navbar = document.getElementById('navbar');
+    const navItems = document.querySelectorAll('.nav-item');
     burgerMenu.addEventListener('click', function(e) {
         e.preventDefault();
         burgerMenu.classList.toggle('burger-btn_active');
+        navbar.classList.toggle('navbar');
+        navbar.classList.toggle('responsive-menu');
     })
 
+    function closeMenuLink() {
+        for (let i = 0; i < navItems.length; i++) {
+            navItems[i].addEventListener('click', function() {
+                navbar.classList.toggle('responsive-menu');
+                navbar.classList.toggle('navbar');
+                burgerMenu.classList.toggle('burger-btn_active');
+            })
+        }
+    }
+    closeMenuLink();
 })

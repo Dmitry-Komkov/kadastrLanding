@@ -37,32 +37,117 @@ header {
                 }
             }
         }
-    }
-    .header__bot {
-        background-color: transparent;
-        z-index: 999999;
-        transition: all .3s;
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            .navbar__logo {
-                flex: 0 0 20%;
+        @media screen and (max-width: $lgPhoneWidth) {
+            .container {
+                .header__top-grid {
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    grid-gap: 10px;
+                    .header__container__header__top-grid__phone {
+                        justify-self: end;
+                    }
+                }
             }
-            .navbar__menu {
-                flex: 0 0 80%;
-                ul {
-                    display: flex;
-                    justify-content: flex-end;
-                    align-items: center;
-                    li {
-                        padding: 0 20px;
-                        a {
-                            color: $default-color;
-                            border-bottom: 2px solid transparent;
-                            &:hover {
-                                border-bottom: 2px solid $danger-color;
-                            }
+        }
+    }
+}
+.header__bot {
+    background-color: transparent;
+    z-index: 999999;
+    transition: all .3s;
+    @media screen and (max-width: $smDesktopWidth) {
+        background-color: white;
+    }
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transition: all .3s;
+}
+.navbar__logo {
+    flex: 0 0 20%;
+}
+.navbar__menu {
+    flex: 0 0 80%;
+    transition: all .3s;
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        li {
+            padding: 0 20px;
+            a {
+                color: $default-color;
+                border-bottom: 2px solid transparent;
+                &:hover {
+                    border-bottom: 2px solid $danger-color;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: $smDesktopWidth) {
+        display: none;
+    }
+}
+.responsive-menu + .header__bot {
+    background: white;
+    transition: all .3s;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: all .3s;
+}
+
+.sticky.header__bot {
+    background-color: rgba(255, 255, 255, 1);
+    transition: all .3s;
+    .responsive-menu .navbar__menu ul li a {
+        color: $mainFontColor;
+    }
+}
+.sticky.header__bot {
+    .navbar .navbar__menu ul li a {
+        color: $mainFontColor;
+    }
+}
+  
+.sticky + .content-wrapper {
+    padding-top: 100px;
+}
+
+.toggleMenu {
+    transition: all .3s;
+    @media screen and (min-width: $smDesktopWidth) {
+        display: none;
+    }
+}
+.responsive-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transition: all 1s;
+    @media screen and (max-width: $smDesktopWidth) {
+        .navbar__menu {
+            display: block;
+            flex: 0 0 100%;
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                li {
+                    padding: 20px 0;
+                    a {
+                        font-size: rem(24);
+                        font-weight: 500;
+                        color: $mainFontColor;
+                        border-bottom: 2px solid transparent;
+                        &:hover {
+                            border-bottom: 2px solid $danger-color;
                         }
                     }
                 }
@@ -70,19 +155,3 @@ header {
         }
     }
 }
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-.sticky.header__bot {
-    background-color: rgba(255, 255, 255, 1);
-    .navbar .navbar__menu ul li a {
-        color: $mainFontColor;
-    }
-}
-  
-  .sticky + .content-wrapper {
-    padding-top: 100px;
-  }

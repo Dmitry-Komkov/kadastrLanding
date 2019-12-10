@@ -32,6 +32,10 @@
         color: white;
         background: $primary-color;
     }
+    @media screen and (max-width: $phoneWidth) {
+        padding: 7px 10px;
+        font-size: rem(14);
+    }
 }
 
 .btn-dark {
